@@ -11,7 +11,7 @@
 
     <title>
         
-        About - AKA Blog
+        우아한테크캠프 2차 코딩테스트 - AKA Blog
         
     </title>
 
@@ -71,7 +71,7 @@
                     <span>ARCHIVES</span>
                 </a>
             </li>
-            <li  class=active >
+            <li >
                 <a href="/about/">
                     <i class="iconfont icon-guanyu2"></i>
                     <span>ABOUT</span>
@@ -87,6 +87,10 @@
             
         </ul>
     </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1번-문제"><span class="toc-text">1번 문제</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2번-문제"><span class="toc-text">2번 문제</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3번-문제"><span class="toc-text">3번 문제</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#총평"><span class="toc-text">총평</span></a></li></ol>
+</div>
     
 </div>
 
@@ -111,16 +115,56 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-content ">
-    <blockquote>
-<p>大多数时候，都在思考自己该走向何方</p>
+
+
+<div class="post-container">
+    <div class="post-title">
+        우아한테크캠프 2차 코딩테스트
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2018-05-26 22:44:19</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#코딩테스트" title="코딩테스트">코딩테스트</a>
+        <span>/</span>
+        
+        
+        </span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>전체적으로 문제 자체의 난이도는 평이했으나, 조금 귀찮은 문제들이 많았습니다(속된 말로 더러운 거죠). </p>
+<p>면접장에서 이런 문제를 풀게 시켰으면 어땠을까 싶은 아쉬움이 듭니다. </p>
+<h2 id="1번-문제"><a href="#1번-문제" class="headerlink" title="1번 문제"></a>1번 문제</h2><p>Josephus problem의 변형. </p>
+<p><a href="https://www.quora.com/What-is-the-best-solution-for-Josephus-problem-algorithm" target="_blank" rel="noopener">Josephus Problem의 풀이법(영어)</a></p>
+<p>기본 Josephus Problem의 점화식은 다음과 같다.</p>
+<blockquote>
+<p>f(n, k) = (f(n-1, k) + k) % n</p>
 </blockquote>
-<p>9月21日上午，阳光明媚，鲜花斗艳。帕洛阿尔托苹果店里欢声笑语，人头攒动。苹果公司首席执行官蒂姆·库克先生在店长欧阳猛南陪同下，不远千米，深入到一线店面，为那里的员工带去节曰的问候和良好的祝愿。<br><br>“果粉们，你们辛苦了，我代表某果公司，祝你们身体健康，生活幸福，工作成功！”库克亲切慰问广大员工和顾客，并就iOS7、iPhone 5S和iPhone 5C的销售状况进行调研。 <br><br>“您现在每月工资有多少？肾5S拿到了吗？”在店里，库克关切地向果粉们问起这一问题。当听说果粉们排到了5S，库克满意地连连点头。接着他指出，近年来苹果事业发展取得巨大成就，特别是iPhone影响剧增，老百姓对iOS满意度逐步提高，在这个转变过程中，果粉的辛勤工作功不可没。<br><br>库克看到一个中国小朋友在排队买iPhone 5S，亲切的问：“5288元一台能承受不？”小朋友回答到：“能！”当得知这位小朋友卖了一个肾来买iPhone 5S时，库克叮嘱道：“在支持苹果的同时，也要爱护身体。”<br><br>库克与购买苹果手机的果粉们兴致勃勃地参观了苹果专卖店，和员工们拉了拉家常，并饶有兴趣地玩了四盘切西瓜游戏，与普通员工同乐。<br><br>在交谈中，库克多次关心地强调：“有了iPhone 5C，就不卖iPhone 5了。”并对顾客说：“好好休息，身体是革命的本钱嘛！”会谈始终在亲切友好的气氛中进行。<br><br>顾客们就库克的讲话达成了广泛的共识，并承认世界上只有iOS最流畅，要紧紧的团结在以库克先生为首席执行官的苹果公司集体周围，一心一意抓学习，聚精会神谋发展。<br><br>帕洛阿尔托苹果专卖店当日原则通过《蒂姆·库克首席执行官在加州新苹果店的讲话纪要》，并下发各分店认真学习、研讨。</p>
-<p style="text-align:right;"><br>    —— <a href="http://www.zhihu.com/question/19687065" target="_blank" rel="noopener">李书航 － 什么是「共产中文腔调」？ </a><br></p>
-    <div id="comment-container">
+<p>우선, d = 1일 경우를 생각해보자.</p>
+<blockquote>
+<p>f(n, k, j) = (f(n-1, k, j) + k + ?) % n</p>
+</blockquote>
+<p>예전 Josephus에는 없었던 j의 존재 때문에 무엇인가를 추가적으로 더해줘야 한다. 대략적으로 마지막 움직임은 k + j * (n-1)이 될 것 같다. 그러면</p>
+<blockquote>
+<p>f(n, k, j) = (f(n-1, k, j) + k + j * (n-1)) % n</p>
+</blockquote>
+<p>이 된다. 반시계방향일 경우도 마찬가지로 계산하면 된다.</p>
+<p>이것도 귀찮으면 그냥 python-list를 써서 편하게 구현할 수도 있다. 대신 속도가 좀 낭비되겠지만.</p>
+<h2 id="2번-문제"><a href="#2번-문제" class="headerlink" title="2번 문제"></a>2번 문제</h2><p>홀수 번 겹치는 구간 구하기와 거의 같은 문제입니다. </p>
+<h2 id="3번-문제"><a href="#3번-문제" class="headerlink" title="3번 문제"></a>3번 문제</h2><p><a href="https://www.acmicpc.net/problem/2672" target="_blank" rel="noopener">BOJ 2672</a>와 거의 같은 방식으로 풀 수 있습니다.</p>
+<p>단, 여기서는 1번 직사각형 하나만 겹치는 구간을 구하면 됩니다. </p>
+<p>즉, 1번 직사각형에 겹치고, 2번 3번 직사각형에는 겹치지 않는 구간의 넓이를 모두 더해주면 됩니다.</p>
+<h2 id="총평"><a href="#총평" class="headerlink" title="총평"></a>총평</h2><p>ACM-ICPC를 준비하셨던, 혹은 출전하셨던 분들이라면 쉽게 푸셨을 것 같습니다. 저는 3문제 모두를 건드려 보았지만, 손이 따라주지 않아 모두 해결하지는 못했습니다. </p>
+<p>종합적으로 변별력이 떨어지는 코딩 테스트였습니다. 약간 아쉽군요. 비전공자 및 이런 문제에 익숙하지 않은 사람은 3번 외에 1번과 2번을 손대는 것 자체가 힘들 것 같습니다. 그렇다고 전공자 중에서 최고를 가려내는 전형적인 PS 스타일의 문제도 아닌 것 같고… </p>
+
+        <div id="comment-container">
+        </div>
     </div>
 </div>
-
     </div>
 </div>
 
@@ -173,7 +217,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
