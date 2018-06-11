@@ -148,12 +148,12 @@
 <blockquote>
 <p>f(n, k, j) = (f(n-1, k, j) + k + ?) % n</p>
 </blockquote>
-<p>예전 Josephus에는 없었던 j의 존재 때문에 무엇인가를 추가적으로 더해줘야 한다. 대략적으로 마지막 움직임은 k + j * (n-1)이 될 것 같다. 그러면</p>
+<p>예전 Josephus에는 없었던 j의 존재 때문에 무엇인가를 추가적으로 더해줘야 한다. 대략적으로 마지막 움직임은 k + j * (n-1)이 될 것 같으니까</p>
 <blockquote>
 <p>f(n, k, j) = (f(n-1, k, j) + k + j * (n-1)) % n</p>
 </blockquote>
-<p>이 된다. 반시계방향일 경우도 마찬가지로 계산하면 된다.</p>
-<p>이것도 귀찮으면 그냥 python-list를 써서 편하게 구현할 수도 있다. 대신 속도가 좀 낭비되겠지만.</p>
+<p>이 된다. 반시계방향일 경우도 마찬가지로 계산하면 됩니다.</p>
+<p>이것도 귀찮으면 그냥 python-list를 써서 편하게 구현할 수도 있습니다. 대신 속도가 좀 낭비되겠지만(얼마나 낭비되는지는 <strong>귀찮아서</strong> 테스트 안 해 봄)</p>
 <h2 id="2번-문제"><a href="#2번-문제" class="headerlink" title="2번 문제"></a>2번 문제</h2><p>홀수 번 겹치는 구간 구하기와 거의 같은 문제입니다. </p>
 <h2 id="3번-문제"><a href="#3번-문제" class="headerlink" title="3번 문제"></a>3번 문제</h2><p><a href="https://www.acmicpc.net/problem/2672" target="_blank" rel="noopener">BOJ 2672</a>와 거의 같은 방식으로 풀 수 있습니다.</p>
 <p>단, 여기서는 1번 직사각형 하나만 겹치는 구간을 구하면 됩니다. </p>
